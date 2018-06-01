@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Trivia
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <img src="/assets/imgs/trivia.jpg">
+  <ion-list>
+    <ion-item>
+      <ion-label>Nombre de questions</ion-label>
+      <ion-select [(ngModel)]="nbQuest">
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+        <ion-option value="8">8</ion-option>
+        <ion-option value="9">9</ion-option>
+        <ion-option value="10">10</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Niveau de difficulté</ion-label>
+      <ion-select [(ngModel)]="level">
+        <ion-option value="easy">facile</ion-option>
+        <ion-option value="average">moyen</ion-option>
+        <ion-option value="hardcore">difficile</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <button ion-button full>C'est parti</button>
+</ion-content>
