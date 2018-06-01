@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Question } from '../../models/question';
 import {QuizzProvider} from "../../providers/quizz/quizz";
-
 /**
  * Generated class for the QuizzPage page.
  *
