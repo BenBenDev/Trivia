@@ -16,18 +16,16 @@
 <ion-content padding>
   <img src="/assets/imgs/trivia.jpg">
   <img src="/assets/imgs/level-{{ level }}.png">
-<h1>C'est parti !</h1>
+  <h1>C'est parti !</h1>
 
   <ion-list>
-    <ion-card *ngFor="let question of questions">
-      <ion-card-header>Question</ion-card-header>
+    <ion-card *ngFor="let question of quizz ; let i = index">
+      <ion-card-header>Question  {{i+1}}/{{nbQuest}}({{question.Category}})</ion-card-header>
+      <ion-card-header>{{ question.question }}</ion-card-header>
       <ion-card-content>
-        reponse 1
+        <button ion-button full  >{{question.correct_answer}}</button>
+        <button ion-button full *ngFor="let answer of question.incorrect_answers" >{{answer}}</button>
       </ion-card-content>
-      <ion-card-content>
-        reponse 2
-      </ion-card-content>
-      <button ion-button full>bouton</button>
     </ion-card>
   </ion-list>
 </ion-content>

@@ -2,12 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Question } from '../../models/question';
 import {QuizzProvider} from "../../providers/quizz/quizz";
-/**
- * Generated class for the QuizzPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -37,6 +32,7 @@ export class QuizzPage {
     this.quizzProvider.getQuizz(this.nbQuest, this.level)
         .then((resultat) => {
           this.quizz = resultat;
+          console.log (this.quizz);
         })
         .catch((error) => {
           this.quizz = [];

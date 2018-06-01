@@ -6,18 +6,20 @@ export class Question {
     public Incorrect_answers: string[];
     public Question: string;
     public Type: string;
+    public Answers: string[];
 
 
     public constructor(Category: string, Correct_answer: string, Difficulty: string,
-                       Incorrect_answers: string[], Question: string, Type: string) {
+                       Incorrect_answers: string[], Question: string, Type: string, Answers: string[]) {
         // this.Id = Id;
         // this.Title = Title;
         this.Category = Category;
-        this. Correct_answer = Correct_answer;
+        this.Correct_answer = Correct_answer;
         this.Difficulty = Difficulty;
         this.Incorrect_answers = Incorrect_answers;
         this.Question = Question;
         this.Type = Type;
+        this.Answers = Answers;
 
     }
 }
