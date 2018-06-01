@@ -1,0 +1,29 @@
+<!--
+  Generated template for the ScorePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Votre score</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img src="/assets/imgs/trivia.jpg">
+  <img src="/assets/imgs/level-{{ level }}.png">
+  Votre score après {{nbQuest}} questions :
+  <h1>{{score}} / nbQuest</h1>
+  <p>soit</p>
+  <h1>{{ score * 100 / nbQuest}} %</h1>
+
+  <ion-content padding>
+    <button ion-button full (click)="backToMainPage()">
+      Retour à l'accueil
+    </button>
+  </ion-content>
+</ion-content>

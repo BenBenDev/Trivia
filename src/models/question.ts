@@ -9,17 +9,17 @@ export class Question {
     public Answers: string[];
 
 
-    public constructor(Category: string, Correct_answer: string, Difficulty: string,
-                       Incorrect_answers: string[], Question: string, Type: string, Answers: string[]) {
+    public constructor(category: string, correct_answer: string, difficulty: string,
+                       incorrect_answers: string[], question: string, type: string, answers: string[]) {
         // this.Id = Id;
         // this.Title = Title;
-        this.Category = Category;
-        this.Correct_answer = Correct_answer;
-        this.Difficulty = Difficulty;
-        this.Incorrect_answers = Incorrect_answers;
-        this.Question = Question;
-        this.Type = Type;
-        this.Answers = Answers;
+        this.Category = category;
+        this.Correct_answer = correct_answer;
+        this.Difficulty = difficulty;
+        this.Incorrect_answers = incorrect_answers;
+        this.Question = question;
+        this.Type = type;
+        this.Answers = this.Incorrect_answers.concat(this.Correct_answer);
 
     }
 }

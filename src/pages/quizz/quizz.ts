@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Question } from '../../models/question';
 import {QuizzProvider} from "../../providers/quizz/quizz";
+import {ScorePage} from "../score/score";
 
 
 @IonicPage()
@@ -13,6 +14,9 @@ export class QuizzPage {
   public nbQuest: number;
   public level:string;
   public quizz: Array<Question> = [];
+  public currentAnswer: number =0;
+  public score: number =0;
+
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -20,11 +24,11 @@ export class QuizzPage {
               public quizzProvider: QuizzProvider) {
   }
 
-  ionViewWillLoad() {
-    console.log('ionViewWillLoad QuizzPage');
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad QuizzPage');
     this.nbQuest = this.navParams.get("nbQuest");
     this.level = this.navParams.get("level");
-    console.log(this.level);
+    console.log('LEVEL : ' +this.level);
 
    //this.quizz = this.quizzProvider.getQuizz(this.nbQuest, this.level);
 
@@ -45,4 +49,25 @@ export class QuizzPage {
 
   }
 
+  public verifAnswer(rep){
+    this.currentAnswer++;
+
+    if (rep == 100){
+      this.score++;
+    }
+    if (this.currentAnswer > this.nbQuest) {
+      this.goToScore()
+    }
+  }
+
+  public goToScore() {
+    this.navCtrl.push(ScorePage, {
+      nbQuest: this.nbQuest,
+      level: this.level,
+      score: this.score
+    } );
+  }
+  public backToMainPage() {
+    this.navCtrl.popToRoot();
+  }
 }

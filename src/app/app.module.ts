@@ -11,6 +11,8 @@ import { HomePage } from '../pages/home/home';
 import { QuizzProvider } from '../providers/quizz/quizz';
 import { QuizzPage } from "../pages/quizz/quizz";
 import { QuizzPageModule } from "../pages/quizz/quizz.module";
+import { ScorePage } from "../pages/score/score";
+import { ScorePageModule } from "../pages/score/score.module";
 
 
 @NgModule({
@@ -23,14 +25,14 @@ import { QuizzPageModule } from "../pages/quizz/quizz.module";
     IonicModule.forRoot(MyApp),
     QuizzPageModule,
     HttpClientModule,
-
+    ScorePageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     QuizzPage,
     HomePage,
-
+    ScorePage,
   ],
   providers: [
     StatusBar,

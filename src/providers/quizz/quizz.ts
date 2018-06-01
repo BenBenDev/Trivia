@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ResultatQuizz } from '../../resultatquizz';
+import { Question } from '../../models/question';
 
 
 @Injectable()
@@ -11,7 +11,7 @@ export class QuizzProvider {
   }
   getQuizz(nbQuest, level){
 
-    return new Promise<ResultatQuizz> ((resolve, reject) => {
+    return new Promise<Question[]> ((resolve, reject) => {
       console.log('REQUEST = https://opentdb.com/api.php?amount='+nbQuest+'&difficulty='+level);
       // this.http.get('http://www.omdbapi.com/?apikey=1898fc97&s=world')
       this.http.get('https://opentdb.com/api.php?amount='+nbQuest+'&difficulty='+level)
@@ -19,6 +19,7 @@ export class QuizzProvider {
           .then((response: any)=> {
             // console.log(response);
             let data = response.results;
+
             // for (let quest in data) {
             //   quest.Answers = [];
             //   let tab=[]
