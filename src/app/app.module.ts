@@ -4,8 +4,14 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { QuizzProvider } from '../providers/quizz/quizz';
+import { QuizzPage } from "../pages/quizz/quizz";
+import { QuizzPageModule } from "../pages/quizz/quizz.module";
+
 
 @NgModule({
   declarations: [
@@ -14,17 +20,23 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    QuizzPageModule,
+    HttpClientModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    QuizzPage,
+    HomePage,
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    QuizzProvider
   ]
 })
 export class AppModule {}

@@ -1,0 +1,33 @@
+<!--
+  Generated template for the QuizzPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Trivia</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img src="/assets/imgs/trivia.jpg">
+  <img src="/assets/imgs/level-{{ level }}.png">
+<h1>C'est parti !</h1>
+
+  <ion-list>
+    <ion-card *ngFor="let question of questions">
+      <ion-card-header>Question</ion-card-header>
+      <ion-card-content>
+        reponse 1
+      </ion-card-content>
+      <ion-card-content>
+        reponse 2
+      </ion-card-content>
+      <button ion-button full>bouton</button>
+    </ion-card>
+  </ion-list>
+</ion-content>

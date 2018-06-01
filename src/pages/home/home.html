@@ -10,6 +10,9 @@
   <img src="/assets/imgs/trivia.jpg">
   <ion-list>
     <ion-item>
+      <ion-label>Choisir avant de commencer :</ion-label>
+    </ion-item>
+    <ion-item>
       <ion-label>Nombre de questions</ion-label>
       <ion-select [(ngModel)]="nbQuest">
         <ion-option value="5">5</ion-option>
@@ -24,10 +27,14 @@
       <ion-label>Niveau de difficulté</ion-label>
       <ion-select [(ngModel)]="level">
         <ion-option value="easy">facile</ion-option>
-        <ion-option value="average">moyen</ion-option>
-        <ion-option value="hardcore">difficile</ion-option>
+        <ion-option value="medium">intermédiaire</ion-option>
+        <ion-option value="hard">difficile</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>
-  <button ion-button full>C'est parti</button>
+  <button ion-button full
+          *ngIf="nbQuest && level"
+  (click)="goToQuizz(nbQuest, level)">
+    C'est parti</button>
+
 </ion-content>
